@@ -3,12 +3,12 @@ package ln.han;
 import java.util.ArrayList;
 
 public class NormalePuntenTelling extends PuntenTelling {
-    public NormalePuntenTelling(int score) {
-        super(score);
+    public NormalePuntenTelling() {
+        super();
     }
 
     @Override
-    public int berekenScore(int score, ArrayList<SpelerAntwoord> spelerAntwoorden, ArrayList<Letter> letters, String gevormdWoord) {
-        return score;
+    public int berekenScore(ArrayList<SpelerAntwoord> spelerAntwoorden, ArrayList<Letter> letters, String gevormdWoord, long tijd) {
+        return 0;
     }
 }

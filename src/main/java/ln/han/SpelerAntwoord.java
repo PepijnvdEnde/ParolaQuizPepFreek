@@ -36,4 +36,12 @@ public class SpelerAntwoord {
     public void setSpeler(Speler speler) {
         this.speler = speler;
     }
+
+    public int getVraagId() {
+        return vraagId;
+    }
+
+    public void setVraagId(int vraagId) {
+        this.vraagId = vraagId;
+    }
 }
