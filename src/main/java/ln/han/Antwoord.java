@@ -4,9 +4,12 @@ public class Antwoord {
     private String antwoordTekst;
     private int vraagId;
 
-    public Antwoord(String antwoordTekst, int vraagId) {
+    private Letter letter;
+
+    public Antwoord(String antwoordTekst, int vraagId, Letter letter) {
         this.antwoordTekst = antwoordTekst;
         this.vraagId = vraagId;
+        this.letter = letter;
     }
 
     public String getAntwoordTekst() {
@@ -23,5 +26,13 @@ public class Antwoord {
 
     public void setVraagId(int vraagId) {
         this.vraagId = vraagId;
+    }
+
+    public Letter getLetter() {
+        return letter;
+    }
+
+    public void setLetter(Letter letter) {
+        this.letter = letter;
     }
 }

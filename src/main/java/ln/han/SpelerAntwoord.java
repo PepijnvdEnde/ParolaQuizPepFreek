@@ -5,9 +5,12 @@ public class SpelerAntwoord {
 
     private Speler speler;
 
-    public SpelerAntwoord(String antwoord, Speler speler) {
+    private int vraagId;
+
+    public SpelerAntwoord(String antwoord, Speler speler, int vraagId) {
         this.antwoord = antwoord;
         this.speler = speler;
+        this.vraagId = vraagId;
     }
 
     public String getAntwoord() {

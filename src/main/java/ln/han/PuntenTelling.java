@@ -17,12 +17,7 @@ public abstract class PuntenTelling {
         return score;
     }
 
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public int berekenScore(int score) {
+    public int berekenScore(int score, ArrayList<SpelerAntwoord> spelerAntwoorden, ArrayList<Letter> letters, String gevormdWoord) {
         return score;
     }
 

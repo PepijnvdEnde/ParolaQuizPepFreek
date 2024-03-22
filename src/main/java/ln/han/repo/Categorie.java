@@ -1,9 +1,14 @@
-package ln.han;
+package ln.han.repo;
 
-public class Categorie {
+public enum Categorie {
+    MUZIEK("Muziek"),
+    SPORT("Sport"),
+    TAAL("Taal"),
+    GEOGRAFIE("Geografie");
+
     private String naam;
 
-    public Categorie(String naam) {
+    Categorie(String naam) {
         this.naam = naam;
     }
 
