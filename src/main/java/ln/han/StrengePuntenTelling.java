@@ -8,7 +8,7 @@ public class StrengePuntenTelling extends PuntenTelling {
     }
 
     @Override
-    public int berekenScore( ArrayList<SpelerAntwoord> spelerAntwoorden, ArrayList<Letter> letters, String gevormdWoord, long tijd) {
+    public int berekenScore( ArrayList<SpelerAntwoord> spelerAntwoorden, String gevormdWoord, long tijd) {
         return 0;
     }
 }

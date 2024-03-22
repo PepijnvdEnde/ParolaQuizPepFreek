@@ -4,11 +4,11 @@ import ln.han.repo.Categorie;
 
 public abstract class QuizVraag {
 
-    public String vraagTekst;
-    public boolean isActueel;
-    public int vraagId;
+    private String vraagTekst;
+    private boolean isActueel;
+    private int vraagId;
 
-    public Categorie categorie;
+    private Categorie categorie;
 
     public QuizVraag(String vraagTekst, boolean isActueel, int vraagId, Categorie categorie) {
         this.vraagTekst = vraagTekst;

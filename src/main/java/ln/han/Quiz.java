@@ -14,20 +14,31 @@ public class Quiz {
 
     public ArrayList<Letter> letters = new ArrayList<>();
 
+    public long beginTijd;
+
+    public long eindTijd;
+
     public Quiz(String quizNaam, int quizId) {
         this.quizNaam = quizNaam;
         this.quizId = quizId;
     }
 
-    public int berekenScore( ArrayList<Letter> letters, String gevormdWoord, long tijd) {
+    public int berekenScore(String gevormdWoord) {
         PuntenTelling puntenTelling = new NormalePuntenTelling();
-        return puntenTelling.berekenScore(spelerAntwoorden, letters, gevormdWoord ,tijd);
+        return puntenTelling.berekenScore(spelerAntwoorden, gevormdWoord , berekenTijd());
     }
 
     public void beantwoordVraag(SpelerAntwoord antwoord) {
-        QuizVraag quizVraag = quizVragen.get(antwoord.getVraagId());
-        SpelerAntwoord spelerAntwoord = new SpelerAntwoord(antwoord.getAntwoord(), antwoord.getSpeler(), quizVraag.getVraagId());
-        spelerAntwoorden.add(spelerAntwoord);
+        spelerAntwoorden.add(antwoord);
+    }
+
+    private long berekenTijd() {
+        return eindTijd - beginTijd;
+    }
+
+    public String getStelling(int i) {
+        QuizVraag quizVraag = quizVragen.get(i);
+        return quizVraag.getVraagTekst();
     }
 
 
@@ -58,6 +69,22 @@ public class Quiz {
 
     public ArrayList<QuizVraag> getQuizVragen() {
         return quizVragen;
+    }
+
+    public void setBeginTijd(long beginTijd) {
+        this.beginTijd = beginTijd;
+    }
+
+    public long getBeginTijd() {
+        return beginTijd;
+    }
+
+    public void setEindTijd(long eindTijd) {
+        this.eindTijd = eindTijd;
+    }
+
+    public long getEindTijd() {
+        return eindTijd;
     }
 
 }

@@ -8,7 +8,7 @@ public class NormalePuntenTelling extends PuntenTelling {
     }
 
     @Override
-    public int berekenScore(ArrayList<SpelerAntwoord> spelerAntwoorden, ArrayList<Letter> letters, String gevormdWoord, long tijd) {
-        return 0;
+    public int berekenScore(ArrayList<SpelerAntwoord> spelerAntwoorden, String gevormdWoord, long tijd) {
+        return spelerAntwoorden.size() + gevormdWoord.length() + (int) tijd / 1000;
     }
 }

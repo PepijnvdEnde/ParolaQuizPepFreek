@@ -12,6 +12,9 @@ public class Antwoord {
         this.letter = letter;
     }
 
+    public boolean isCorrect(String antwoord) {
+        return antwoordTekst.equalsIgnoreCase(antwoord);
+    }
     public String getAntwoordTekst() {
         return antwoordTekst;
     }

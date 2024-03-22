@@ -29,4 +29,9 @@ public class MeerkeuzeQuizVraag extends QuizVraag {
         this.antwoorden = antwoorden;
     }
 
+    @Override
+    public String toString() {
+        return getVraagTekst() + "\n" + antwoorden.toString().replace("[", "").replace("]", "").replace(",", "\n").replace( " ", "");
+    }
+
 }

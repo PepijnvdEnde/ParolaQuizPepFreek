@@ -13,6 +13,11 @@ public class SpelerAntwoord {
         this.vraagId = vraagId;
     }
 
+    @Override
+    public String toString() {
+        return getAntwoord();
+    }
+
     public String getAntwoord() {
         return antwoord;
     }
