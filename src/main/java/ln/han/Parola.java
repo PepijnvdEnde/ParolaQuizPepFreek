@@ -10,7 +10,6 @@ public class Parola {
         Speler speler = new Speler();
 
 
-
         System.out.println("Welkom bij de quiz! Kies een categorie:");
         System.out.println("Muziek");
         System.out.println("Sport");

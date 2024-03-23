@@ -16,7 +16,6 @@ public abstract class QuizVraag {
 
 
     // getters and setters
-
     public String getVraagTekst() {
         if (isActueel) {
             return vraagTekst;

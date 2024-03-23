@@ -22,7 +22,6 @@ public class QuizRepo {
     AntwoordenRepo antwoordenRepo = new AntwoordenRepo();
 
 
-
     public QuizRepo(Speler speler, PuntenTelling puntenTelling) {
         muziekQuiz = new Quiz(puntenTelling, speler);
         sportQuiz = new Quiz(puntenTelling, speler);

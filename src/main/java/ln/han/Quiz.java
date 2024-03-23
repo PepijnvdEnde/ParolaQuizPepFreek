@@ -25,7 +25,6 @@ public class Quiz {
     private final Speler speler;
 
 
-
     public Quiz(PuntenTelling puntenTelling, Speler speler) {
         this.puntenTelling = puntenTelling;
         this.speler = speler;
@@ -41,7 +40,8 @@ public class Quiz {
 
 
     }
-    private void beantwoordVragen(){
+
+    private void beantwoordVragen() {
         Scanner scanner = new Scanner(System.in);
         for (QuizVraag quizVraag : quizVragen) {
             System.out.println(quizVraag.getVraagTekst());
@@ -49,6 +49,7 @@ public class Quiz {
             beantwoordVraag(spelerAntwoord);
         }
     }
+
     private void woordMaken() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Je behaalde letters zijn: " + letters);
@@ -61,7 +62,6 @@ public class Quiz {
         speler.setScore(berekenScore(gevormdWoord));
 
     }
-
 
 
     private void controleerAntwoorden(List<SpelerAntwoord> spelerAntwoorden) {
@@ -91,9 +91,8 @@ public class Quiz {
     }
 
 
-
     public int berekenScore(String gevormdWoord) {
-        return puntenTelling.berekenScore(correcteVragen, gevormdWoord , berekenTijd());
+        return puntenTelling.berekenScore(correcteVragen, gevormdWoord, berekenTijd());
     }
 
     public void beantwoordVraag(SpelerAntwoord antwoord) {
@@ -105,7 +104,6 @@ public class Quiz {
     }
 
 
-
     // Getters and Setters
 
     public void setQuizVragen(ArrayList<QuizVraag> quizVragen) {
@@ -115,7 +113,6 @@ public class Quiz {
     public void setAntwoorden(ArrayList<Antwoord> antwoorden) {
         this.antwoorden = antwoorden;
     }
-
 
 
 }

@@ -22,7 +22,7 @@ public class VraagRepo {
                     add("Fluit");
                     add("Trompet");
                     add("Gitaar");
-        }}));
+                }}));
         // antwoord:Eminem
         vragen.add(new OpenQuizVraag("Wat is de artiestnaam van de rapper Marshall Bruce Mathers III?", true, 2, MUZIEK));
         // antwoord: Freddie Mercury
@@ -32,7 +32,7 @@ public class VraagRepo {
                     add("John Lennon");
                     add("Mick Jagger");
                     add("Elton John");
-        }}));
+                }}));
         // antwoord: Thriller
         vragen.add(new OpenQuizVraag("Wat is de naam van het iconische album van Michael Jackson uit 1982 dat meer dan 65 miljoen exemplaren heeft verkocht wereldwijd?", true, 4, MUZIEK));
         // antwoord: Lindsey Stirling
@@ -42,7 +42,7 @@ public class VraagRepo {
                     add("Vanessa Mae");
                     add("Nigel Kennedy");
                     add("Lindsey Stirling");
-        }}));
+                }}));
         // antwoord: Mick Jagger
         vragen.add(new OpenQuizVraag("Hoe heet de zanger van de band \"The Rolling Stones\"?", true, 6, MUZIEK));
         // antwoord: Saxofoon
@@ -52,7 +52,7 @@ public class VraagRepo {
                     add("Trompet");
                     add("Klarinet");
                     add("Fluit");
-        }}));
+                }}));
         // antwoord: Kurt Cobain
         vragen.add(new OpenQuizVraag("Hoe heet de zanger van de band \"Nirvana\"?", true, 8, MUZIEK));
 
@@ -64,7 +64,7 @@ public class VraagRepo {
                     add("Golf");
                     add("Voetbal");
                     add("Basketbal");
-        }}));
+                }}));
         // antwoord: 9
         vragen.add(new OpenQuizVraag("Hoeveel spelers zijn er in een baseball team?", true, 10, SPORT));
         // antwoord: verenigde staten
@@ -74,7 +74,7 @@ public class VraagRepo {
                     add("Rusland");
                     add("Verenigde Staten");
                     add("Duitsland");
-        }}));
+                }}));
         // antwoord: 3
         vragen.add(new OpenQuizVraag("Hoeveel punten is een basketbalveld waard als de speler buiten de driepuntslijn scoort?", true, 12, SPORT));
         // antwoord: 5
@@ -84,7 +84,7 @@ public class VraagRepo {
                     add("7");
                     add("8");
                     add("5");
-        }}));
+                }}));
         // antwoord: usain bolt
         vragen.add(new OpenQuizVraag("Wie heeft het wereldrecord op de 100 meter sprint?", true, 14, SPORT));
         // antwoord: Zwemmen
@@ -94,7 +94,7 @@ public class VraagRepo {
                     add("Turnen");
                     add("Wielrennen");
                     add("Zwemmen");
-        }}));
+                }}));
         // antwoord: 11
         vragen.add(new OpenQuizVraag("Hoeveel spelers zijn er in een voetbalteam?", true, 16, SPORT));
 
@@ -106,13 +106,13 @@ public class VraagRepo {
                     add("China");
                     add("Verenigde Staten");
                     add("Rusland");
-        }}));
+                }}));
         // antwoord: waar
         vragen.add(new MeerkeuzeQuizVraag("Waar of niet waar: \"Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo\" is een correcte zin in het Engels.", true, 18, TAAL,
                 new ArrayList<>() {{
                     add("Waar");
                     add("Niet waar");
-        }}));
+                }}));
         // antwoord: Portugees
         vragen.add(new MeerkeuzeQuizVraag("Wat is de officiële taal van Brazilië?", true, 19, TAAL,
                 new ArrayList<>() {{
@@ -120,7 +120,7 @@ public class VraagRepo {
                     add("Engels");
                     add("Portugees");
                     add("Frans");
-        }}));
+                }}));
         // antwoord: 29
         vragen.add(new OpenQuizVraag("Hoeveel letters heeft het Zweeds alfabet?", true, 20, TAAL));
         // antwoord: Mandarijn
@@ -130,7 +130,7 @@ public class VraagRepo {
                     add("Mandarijn");
                     add("Hindi");
                     add("Spaans");
-        }}));
+                }}));
         // antwoord: Grieks
         vragen.add(new MeerkeuzeQuizVraag("Waar komt de naam alfabet vandaan?", true, 22, TAAL,
                 new ArrayList<>() {{
@@ -138,7 +138,7 @@ public class VraagRepo {
                     add("Latijn");
                     add("Arabisch");
                     add("Hebreeuws");
-        }}));
+                }}));
         // antwoord: dan
         vragen.add(new MeerkeuzeQuizVraag("In de zin \"Ik ben groter ___ jij\", welk woord moet er op de plek van de streepjes komen?", true, 23, TAAL,
                 new ArrayList<>() {{
@@ -152,7 +152,7 @@ public class VraagRepo {
                 new ArrayList<>() {{
                     add("Waar");
                     add("Niet waar");
-        }}));
+                }}));
 
         // 8 Geografie vragen
         // antwoord: Rusland
@@ -162,7 +162,7 @@ public class VraagRepo {
                     add("China");
                     add("Rusland");
                     add("Australië");
-        }}));
+                }}));
         // antwoord: peking of beijing
         vragen.add(new OpenQuizVraag("Hoe heet de hoofdstad van China?", true, 26, GEOGRAFIE));
         // antwoord: Canberra
@@ -182,7 +182,7 @@ public class VraagRepo {
                     add("Stille Oceaan");
                     add("Arctische Oceaan");
                     add("Indische Oceaan");
-        }}));
+                }}));
         // antwoord: 195
         vragen.add(new OpenQuizVraag("Hoeveel landen zijn er op aarde? Volgens de VN", true, 30, GEOGRAFIE));
         // antwoord: Reykjavik
@@ -192,7 +192,7 @@ public class VraagRepo {
                     add("Helsinki");
                     add("Reykjavik");
                     add("Tallinn");
-        }}));
+                }}));
 
         // antwoord: 3
         vragen.add(new OpenQuizVraag("Hoeveel landen delen het eiland Borneo?", true, 32, GEOGRAFIE));
