@@ -148,7 +148,7 @@ public class VraagRepo {
                     add("als dan");
                 }}));
         // antwoord: Niet Waar
-        vragen.add(new MeerkeuzeQuizVraag("Fries is ontstaan uit het Nederlands.", false, 24, TAAL,
+        vragen.add(new MeerkeuzeQuizVraag("Fries is ontstaan uit het Nederlands.", true, 24, TAAL,
                 new ArrayList<>() {{
                     add("Waar");
                     add("Niet waar");
