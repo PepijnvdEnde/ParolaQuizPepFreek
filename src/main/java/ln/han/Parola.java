@@ -1,24 +1,45 @@
 package ln.han;
 
-import ln.han.repo.VraagRepo;
+import ln.han.repo.QuizRepo;
+
 import java.util.Scanner;
 
 public class Parola {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Speler speler = new Speler();
-        Quiz quiz = new Quiz("test", 1);
-        VraagRepo vraagRepo = new VraagRepo();
-        for (int i = 0; i < 3; i++) {
-            quiz.addQuizVraag(vraagRepo.getVraag(i));
-            System.out.println(vraagRepo.getVraag(i).toString());
-            SpelerAntwoord spelerAntwoord = new SpelerAntwoord(scanner.nextLine(), speler, i);
-            quiz.beantwoordVraag(spelerAntwoord);
+        QuizRepo quizRepo = new QuizRepo();
 
+
+        System.out.println("Welkom bij de quiz! Kies een thema bij nummer:");
+        System.out.println("1. Muziek");
+        System.out.println("2. Sport");
+        System.out.println("3. Taal");
+        System.out.println("4. Geografie");
+        String Categorie = scanner.nextLine();
+        switch (Categorie) {
+            case "1":
+                Quiz muziekQuiz = quizRepo.getMuziekQuiz();
+                muziekQuiz.setSpeler(speler);
+                muziekQuiz.speelQuiz();
+                break;
+            case "2":
+                Quiz sportQuiz = quizRepo.getSportQuiz();
+                sportQuiz.setSpeler(speler);
+                sportQuiz.speelQuiz();
+                break;
+            case "3":
+                Quiz taalQuiz = quizRepo.getTaalQuiz();
+                taalQuiz.setSpeler(speler);
+                taalQuiz.speelQuiz();
+                break;
+            case "4":
+                Quiz geografieQuiz = quizRepo.getGeografieQuiz();
+                geografieQuiz.setSpeler(speler);
+                geografieQuiz.speelQuiz();
+                break;
+            default:
+                System.out.println("Ongeldige keuze");
         }
-        System.out.println(quiz.spelerAntwoorden.toString());
-
-
-
     }
 }

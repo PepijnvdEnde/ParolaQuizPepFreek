@@ -1,26 +1,32 @@
 package ln.han;
 
+import java.util.ArrayList;
+
 public class Antwoord {
-    private String antwoordTekst;
+    private ArrayList<String> antwoorden = new ArrayList<>();
     private int vraagId;
 
     private Letter letter;
 
     public Antwoord(String antwoordTekst, int vraagId, Letter letter) {
-        this.antwoordTekst = antwoordTekst;
+        this.antwoorden.add(antwoordTekst);
+        this.vraagId = vraagId;
+        this.letter = letter;
+    }
+
+    public Antwoord(ArrayList<String> antwoorden, int vraagId, Letter letter) {
+        this.antwoorden = antwoorden;
         this.vraagId = vraagId;
         this.letter = letter;
     }
 
     public boolean isCorrect(String antwoord) {
-        return antwoordTekst.equalsIgnoreCase(antwoord);
-    }
-    public String getAntwoordTekst() {
-        return antwoordTekst;
-    }
-
-    public void setAntwoordTekst(String antwoordTekst) {
-        this.antwoordTekst = antwoordTekst;
+        for (String s : antwoorden) {
+            if (s.equalsIgnoreCase(antwoord)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public int getVraagId() {

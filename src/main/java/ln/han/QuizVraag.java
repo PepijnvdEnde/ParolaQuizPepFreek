@@ -1,7 +1,5 @@
 package ln.han;
 
-import ln.han.repo.Categorie;
-
 public abstract class QuizVraag {
 
     private String vraagTekst;
@@ -16,6 +14,9 @@ public abstract class QuizVraag {
         this.vraagId = vraagId;
         this.categorie = categorie;
     }
+
+
+    // getters and setters
 
     public String getVraagTekst() {
         return vraagTekst;
@@ -48,7 +49,5 @@ public abstract class QuizVraag {
     public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
     }
-
-
 
 }

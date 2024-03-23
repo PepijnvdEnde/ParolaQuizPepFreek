@@ -26,9 +26,6 @@ public class SpelerAntwoord {
         return speler;
     }
 
-    public boolean isCorrect(String correctAntwoord) {
-        return antwoord.equals(correctAntwoord);
-    }
 
     public void verhoogScore() {
         speler.verhoogScore();

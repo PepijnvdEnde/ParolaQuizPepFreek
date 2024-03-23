@@ -1,4 +1,4 @@
-package ln.han.repo;
+package ln.han;
 
 public enum Categorie {
     MUZIEK("Muziek"),

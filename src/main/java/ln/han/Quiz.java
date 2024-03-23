@@ -1,26 +1,57 @@
 package ln.han;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Quiz {
 
-    public String quizNaam;
+    private String quizNaam;
 
-    public int quizId;
+    private int quizId;
 
-    public ArrayList<QuizVraag> quizVragen = new ArrayList<>();
+    private ArrayList<QuizVraag> quizVragen = new ArrayList<>();
 
-    public ArrayList<SpelerAntwoord> spelerAntwoorden = new ArrayList<>();
+    private ArrayList<Antwoord> antwoorden = new ArrayList<>();
 
-    public ArrayList<Letter> letters = new ArrayList<>();
+    private ArrayList<SpelerAntwoord> spelerAntwoorden = new ArrayList<>();
 
-    public long beginTijd;
+    private ArrayList<Letter> letters = new ArrayList<>();
 
-    public long eindTijd;
+    private long beginTijd;
+
+    private long eindTijd;
+
+    private Speler speler;
 
     public Quiz(String quizNaam, int quizId) {
         this.quizNaam = quizNaam;
         this.quizId = quizId;
+    }
+
+    public void speelQuiz() {
+        beginTijd = System.currentTimeMillis();
+        for (QuizVraag quizVraag : quizVragen) {
+            System.out.println(quizVraag.getVraagTekst());
+            Scanner scanner = new Scanner(System.in);
+            SpelerAntwoord spelerAntwoord = new SpelerAntwoord(scanner.nextLine(), speler, quizVraag.getVraagId());
+            beantwoordVraag(spelerAntwoord);
+        }
+        eindTijd = System.currentTimeMillis();
+        controleerAntwoorden(spelerAntwoorden);
+    }
+
+    private void controleerAntwoorden(ArrayList<SpelerAntwoord> spelerAntwoorden) {
+        for (SpelerAntwoord spelerAntwoord : spelerAntwoorden) {
+            for (Antwoord antwoord : antwoorden) {
+                if (antwoord.getVraagId() == spelerAntwoord.getVraagId()) {
+                    if (antwoord.isCorrect(spelerAntwoord.getAntwoord())) {
+                        System.out.println("Goed!");
+                    } else {
+                        System.out.println("Fout!");
+                    }
+                }
+            }
+        }
     }
 
     public int berekenScore(String gevormdWoord) {
@@ -36,10 +67,6 @@ public class Quiz {
         return eindTijd - beginTijd;
     }
 
-    public String getStelling(int i) {
-        QuizVraag quizVraag = quizVragen.get(i);
-        return quizVraag.getVraagTekst();
-    }
 
 
     // Getters and Setters
@@ -71,6 +98,18 @@ public class Quiz {
         return quizVragen;
     }
 
+    public void setQuizVragen(ArrayList<QuizVraag> quizVragen) {
+        this.quizVragen = quizVragen;
+    }
+
+    public void setAntwoorden(ArrayList<Antwoord> antwoorden) {
+        this.antwoorden = antwoorden;
+    }
+
+    public ArrayList<Antwoord> getAntwoorden() {
+        return antwoorden;
+    }
+
     public void setBeginTijd(long beginTijd) {
         this.beginTijd = beginTijd;
     }
@@ -86,5 +125,16 @@ public class Quiz {
     public long getEindTijd() {
         return eindTijd;
     }
+
+    public void setSpeler(Speler speler) {
+        this.speler = speler;
+    }
+
+    public Speler getSpeler() {
+        return speler;
+    }
+
+
+
 
 }
