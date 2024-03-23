@@ -24,10 +24,10 @@ public class QuizRepo {
 
 
     public QuizRepo(Speler speler, PuntenTelling puntenTelling) {
-        muziekQuiz = new Quiz(MUZIEK, puntenTelling, speler);
-        sportQuiz = new Quiz(SPORT, puntenTelling, speler);
-        taalQuiz = new Quiz(TAAL, puntenTelling, speler);
-        geografieQuiz = new Quiz(GEOGRAFIE, puntenTelling, speler);
+        muziekQuiz = new Quiz(puntenTelling, speler);
+        sportQuiz = new Quiz(puntenTelling, speler);
+        taalQuiz = new Quiz(puntenTelling, speler);
+        geografieQuiz = new Quiz(puntenTelling, speler);
         muziekQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(MUZIEK));
         muziekQuiz.setAntwoorden(antwoordenRepo.getAntwoordenByCategorie(MUZIEK));
         sportQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(SPORT));
@@ -40,18 +40,12 @@ public class QuizRepo {
     }
 
     public Quiz getQuizByCategorie(Categorie categorie) {
-        switch (categorie) {
-            case MUZIEK:
-                return muziekQuiz;
-            case SPORT:
-                return sportQuiz;
-            case TAAL:
-                return taalQuiz;
-            case GEOGRAFIE:
-                return geografieQuiz;
-            default:
-                return null;
-        }
+        return switch (categorie) {
+            case MUZIEK -> muziekQuiz;
+            case SPORT -> sportQuiz;
+            case TAAL -> taalQuiz;
+            case GEOGRAFIE -> geografieQuiz;
+        };
     }
 
 

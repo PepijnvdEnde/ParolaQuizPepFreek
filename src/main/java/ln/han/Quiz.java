@@ -1,14 +1,12 @@
 package ln.han;
 
-import ln.han.repo.QuizRepo;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Quiz {
 
-    private PuntenTelling puntenTelling;
+    private final PuntenTelling puntenTelling;
 
     private List<QuizVraag> quizVragen = new ArrayList<>();
 
@@ -24,31 +22,13 @@ public class Quiz {
 
     private long eindTijd;
 
-    private Speler speler;
+    private final Speler speler;
 
 
 
-    public Quiz(Categorie categorie, PuntenTelling puntenTelling, Speler speler) {
-        switch (categorie) {
-            case MUZIEK:
-                this.puntenTelling = puntenTelling;
-                this.speler = speler;
-                break;
-            case SPORT:
-               this.puntenTelling = puntenTelling;
-                this.speler = speler;
-                break;
-            case TAAL:
-                this.puntenTelling = puntenTelling;
-                this.speler = speler;
-                break;
-            case GEOGRAFIE:
-                this.puntenTelling = puntenTelling;
-                this.speler = speler;
-                break;
-            default:
-                System.out.println("Ongeldige keuze");
-        }
+    public Quiz(PuntenTelling puntenTelling, Speler speler) {
+        this.puntenTelling = puntenTelling;
+        this.speler = speler;
     }
 
     public void speelQuiz() {
@@ -134,14 +114,6 @@ public class Quiz {
 
     public void setAntwoorden(ArrayList<Antwoord> antwoorden) {
         this.antwoorden = antwoorden;
-    }
-
-    public void setSpeler(Speler speler) {
-        this.speler = speler;
-    }
-
-    public void setPuntenTelling(PuntenTelling puntenTelling) {
-        this.puntenTelling = puntenTelling;
     }
 
 
