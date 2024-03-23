@@ -1,14 +1,14 @@
 package ln.han;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class NormalePuntenTelling extends PuntenTelling {
+public class NormalePuntenTelling implements PuntenTelling {
     public NormalePuntenTelling() {
         super();
     }
 
     @Override
-    public int berekenScore(ArrayList<SpelerAntwoord> spelerAntwoorden, String gevormdWoord, long tijd) {
-        return spelerAntwoorden.size() + gevormdWoord.length() + (int) tijd / 1000;
+    public int berekenScore(List<Boolean> correcteVragen, String gevormdWoord, long tijd) {
+        return correcteVragen.size() + gevormdWoord.length() + (int) tijd / 1000;
     }
 }

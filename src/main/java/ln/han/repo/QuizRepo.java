@@ -1,20 +1,21 @@
 package ln.han.repo;
 
+import ln.han.Categorie;
+import ln.han.PuntenTelling;
 import ln.han.Quiz;
-
-import java.util.ArrayList;
+import ln.han.Speler;
 
 import static ln.han.Categorie.*;
 
 public class QuizRepo {
 
-    private Quiz muziekQuiz;
+    private final Quiz muziekQuiz;
 
-    private Quiz sportQuiz;
+    private final Quiz sportQuiz;
 
-    private Quiz taalQuiz;
+    private final Quiz taalQuiz;
 
-    private Quiz geografieQuiz;
+    private final Quiz geografieQuiz;
 
     VraagRepo vraagRepo = new VraagRepo();
 
@@ -22,11 +23,11 @@ public class QuizRepo {
 
 
 
-    public QuizRepo() {
-        muziekQuiz = new Quiz("Muziek", 1);
-        sportQuiz = new Quiz("Sport", 2);
-        taalQuiz = new Quiz("Taal", 3);
-        geografieQuiz = new Quiz("Geografie", 4);
+    public QuizRepo(Speler speler, PuntenTelling puntenTelling) {
+        muziekQuiz = new Quiz(MUZIEK, puntenTelling, speler);
+        sportQuiz = new Quiz(SPORT, puntenTelling, speler);
+        taalQuiz = new Quiz(TAAL, puntenTelling, speler);
+        geografieQuiz = new Quiz(GEOGRAFIE, puntenTelling, speler);
         muziekQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(MUZIEK));
         muziekQuiz.setAntwoorden(antwoordenRepo.getAntwoordenByCategorie(MUZIEK));
         sportQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(SPORT));
@@ -38,20 +39,19 @@ public class QuizRepo {
 
     }
 
-    public Quiz getMuziekQuiz() {
-        return muziekQuiz;
-    }
-
-    public Quiz getSportQuiz() {
-        return sportQuiz;
-    }
-
-    public Quiz getTaalQuiz() {
-        return taalQuiz;
-    }
-
-    public Quiz getGeografieQuiz() {
-        return geografieQuiz;
+    public Quiz getQuizByCategorie(Categorie categorie) {
+        switch (categorie) {
+            case MUZIEK:
+                return muziekQuiz;
+            case SPORT:
+                return sportQuiz;
+            case TAAL:
+                return taalQuiz;
+            case GEOGRAFIE:
+                return geografieQuiz;
+            default:
+                return null;
+        }
     }
 
 

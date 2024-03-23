@@ -1,13 +1,9 @@
 package ln.han;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public abstract class PuntenTelling {
+public interface PuntenTelling {
 
-    public PuntenTelling() {}
-
-    public int berekenScore(ArrayList<SpelerAntwoord> spelerAntwoorden, String gevormdWoord, long tijd) {
-        return 0;
-    }
+    public int berekenScore(List<Boolean> correcteVragen, String gevormdWoord, long tijd);
 
 }

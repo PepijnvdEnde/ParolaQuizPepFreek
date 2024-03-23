@@ -1,22 +1,10 @@
 package ln.han;
 
 public enum Categorie {
-    MUZIEK("Muziek"),
-    SPORT("Sport"),
-    TAAL("Taal"),
-    GEOGRAFIE("Geografie");
+    MUZIEK,
+    SPORT,
+    TAAL,
+    GEOGRAFIE
 
-    private String naam;
 
-    Categorie(String naam) {
-        this.naam = naam;
-    }
-
-    public String getNaam() {
-        return naam;
-    }
-
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
 }

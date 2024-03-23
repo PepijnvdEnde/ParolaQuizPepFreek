@@ -1,21 +1,24 @@
 package ln.han;
 
+import ln.han.repo.QuizRepo;
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Quiz {
 
-    private String quizNaam;
+    private PuntenTelling puntenTelling;
 
-    private int quizId;
+    private List<QuizVraag> quizVragen = new ArrayList<>();
 
-    private ArrayList<QuizVraag> quizVragen = new ArrayList<>();
+    private List<Antwoord> antwoorden = new ArrayList<>();
 
-    private ArrayList<Antwoord> antwoorden = new ArrayList<>();
+    private final List<SpelerAntwoord> spelerAntwoorden = new ArrayList<>();
 
-    private ArrayList<SpelerAntwoord> spelerAntwoorden = new ArrayList<>();
+    private final List<Letter> letters = new ArrayList<>();
 
-    private ArrayList<Letter> letters = new ArrayList<>();
+    private final List<Boolean> correcteVragen = new ArrayList<>();
 
     private long beginTijd;
 
@@ -23,40 +26,94 @@ public class Quiz {
 
     private Speler speler;
 
-    public Quiz(String quizNaam, int quizId) {
-        this.quizNaam = quizNaam;
-        this.quizId = quizId;
+
+
+    public Quiz(Categorie categorie, PuntenTelling puntenTelling, Speler speler) {
+        switch (categorie) {
+            case MUZIEK:
+                this.puntenTelling = puntenTelling;
+                this.speler = speler;
+                break;
+            case SPORT:
+               this.puntenTelling = puntenTelling;
+                this.speler = speler;
+                break;
+            case TAAL:
+                this.puntenTelling = puntenTelling;
+                this.speler = speler;
+                break;
+            case GEOGRAFIE:
+                this.puntenTelling = puntenTelling;
+                this.speler = speler;
+                break;
+            default:
+                System.out.println("Ongeldige keuze");
+        }
     }
 
     public void speelQuiz() {
         beginTijd = System.currentTimeMillis();
-        for (QuizVraag quizVraag : quizVragen) {
-            System.out.println(quizVraag.getVraagTekst());
-            Scanner scanner = new Scanner(System.in);
-            SpelerAntwoord spelerAntwoord = new SpelerAntwoord(scanner.nextLine(), speler, quizVraag.getVraagId());
-            beantwoordVraag(spelerAntwoord);
-        }
+        beantwoordVragen();
         eindTijd = System.currentTimeMillis();
         controleerAntwoorden(spelerAntwoorden);
+        woordMaken();
+        System.out.println("Je score is: " + speler.getScore());
+
+
+    }
+    private void beantwoordVragen(){
+        Scanner scanner = new Scanner(System.in);
+        for (QuizVraag quizVraag : quizVragen) {
+            System.out.println(quizVraag.getVraagTekst());
+            SpelerAntwoord spelerAntwoord = new SpelerAntwoord(scanner.nextLine(), quizVraag.getVraagId());
+            beantwoordVraag(spelerAntwoord);
+        }
+    }
+    private void woordMaken() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Je behaalde letters zijn: " + letters);
+        System.out.println("Vorm een woord met de letters: ");
+        String gevormdWoord = scanner.nextLine();
+        if (!controleerWoord(gevormdWoord)) {
+            System.out.println("Het gevormde woord is niet correct.");
+            woordMaken();
+        }
+        speler.setScore(berekenScore(gevormdWoord));
+
     }
 
-    private void controleerAntwoorden(ArrayList<SpelerAntwoord> spelerAntwoorden) {
+
+
+    private void controleerAntwoorden(List<SpelerAntwoord> spelerAntwoorden) {
         for (SpelerAntwoord spelerAntwoord : spelerAntwoorden) {
             for (Antwoord antwoord : antwoorden) {
-                if (antwoord.getVraagId() == spelerAntwoord.getVraagId()) {
-                    if (antwoord.isCorrect(spelerAntwoord.getAntwoord())) {
-                        System.out.println("Goed!");
-                    } else {
-                        System.out.println("Fout!");
+                if (antwoord.getVraagId() == spelerAntwoord.vraagId()) {
+                    if (antwoord.isCorrect(spelerAntwoord.antwoord())) {
+                        correcteVragen.add(true);
+                        letters.add(antwoord.getLetter());
                     }
                 }
             }
         }
     }
 
+    private boolean controleerWoord(String gevormdWoord) {
+        char[] karakters = gevormdWoord.toLowerCase().toCharArray();
+
+        for (char karakter : karakters) {
+            Letter letter = Letter.getLetter(karakter);
+            if (!letters.contains(letter)) {
+                System.out.println("Letter '" + karakter + "' komt niet voor in de lijst letters.");
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
     public int berekenScore(String gevormdWoord) {
-        PuntenTelling puntenTelling = new NormalePuntenTelling();
-        return puntenTelling.berekenScore(spelerAntwoorden, gevormdWoord , berekenTijd());
+        return puntenTelling.berekenScore(correcteVragen, gevormdWoord , berekenTijd());
     }
 
     public void beantwoordVraag(SpelerAntwoord antwoord) {
@@ -70,33 +127,6 @@ public class Quiz {
 
 
     // Getters and Setters
-    public void setQuizNaam(String quizNaam) {
-        this.quizNaam = quizNaam;
-    }
-
-    public String getQuizNaam() {
-        return quizNaam;
-    }
-
-    public void setQuizId(int quizId) {
-        this.quizId = quizId;
-    }
-
-    public int getQuizId() {
-        return quizId;
-    }
-
-    public void addQuizVraag(QuizVraag quizVraag) {
-        quizVragen.add(quizVraag);
-    }
-
-    public void removeQuizVraag(QuizVraag quizVraag) {
-        quizVragen.remove(quizVraag);
-    }
-
-    public ArrayList<QuizVraag> getQuizVragen() {
-        return quizVragen;
-    }
 
     public void setQuizVragen(ArrayList<QuizVraag> quizVragen) {
         this.quizVragen = quizVragen;
@@ -106,34 +136,13 @@ public class Quiz {
         this.antwoorden = antwoorden;
     }
 
-    public ArrayList<Antwoord> getAntwoorden() {
-        return antwoorden;
-    }
-
-    public void setBeginTijd(long beginTijd) {
-        this.beginTijd = beginTijd;
-    }
-
-    public long getBeginTijd() {
-        return beginTijd;
-    }
-
-    public void setEindTijd(long eindTijd) {
-        this.eindTijd = eindTijd;
-    }
-
-    public long getEindTijd() {
-        return eindTijd;
-    }
-
     public void setSpeler(Speler speler) {
         this.speler = speler;
     }
 
-    public Speler getSpeler() {
-        return speler;
+    public void setPuntenTelling(PuntenTelling puntenTelling) {
+        this.puntenTelling = puntenTelling;
     }
-
 
 
 

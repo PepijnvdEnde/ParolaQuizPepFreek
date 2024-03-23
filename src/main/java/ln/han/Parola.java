@@ -8,38 +8,22 @@ public class Parola {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Speler speler = new Speler();
-        QuizRepo quizRepo = new QuizRepo();
 
 
-        System.out.println("Welkom bij de quiz! Kies een thema bij nummer:");
-        System.out.println("1. Muziek");
-        System.out.println("2. Sport");
-        System.out.println("3. Taal");
-        System.out.println("4. Geografie");
-        String Categorie = scanner.nextLine();
-        switch (Categorie) {
-            case "1":
-                Quiz muziekQuiz = quizRepo.getMuziekQuiz();
-                muziekQuiz.setSpeler(speler);
-                muziekQuiz.speelQuiz();
-                break;
-            case "2":
-                Quiz sportQuiz = quizRepo.getSportQuiz();
-                sportQuiz.setSpeler(speler);
-                sportQuiz.speelQuiz();
-                break;
-            case "3":
-                Quiz taalQuiz = quizRepo.getTaalQuiz();
-                taalQuiz.setSpeler(speler);
-                taalQuiz.speelQuiz();
-                break;
-            case "4":
-                Quiz geografieQuiz = quizRepo.getGeografieQuiz();
-                geografieQuiz.setSpeler(speler);
-                geografieQuiz.speelQuiz();
-                break;
-            default:
-                System.out.println("Ongeldige keuze");
-        }
+
+        System.out.println("Welkom bij de quiz! Kies een categorie:");
+        System.out.println("Muziek");
+        System.out.println("Sport");
+        System.out.println("Taal");
+        System.out.println("Geografie");
+        Categorie categorie = Categorie.valueOf(scanner.nextLine().toUpperCase());
+        System.out.println("Kies een puntentelling methode:");
+        System.out.println("1. Strenge punten telling");
+        System.out.println("2. Normale punten telling");
+        PuntenTelling puntenTelling = scanner.nextLine().equals("1") ? new StrengePuntenTelling() : new NormalePuntenTelling();
+        QuizRepo quizRepo = new QuizRepo(speler, puntenTelling);
+        quizRepo.getQuizByCategorie(categorie).speelQuiz();
+
+
     }
 }

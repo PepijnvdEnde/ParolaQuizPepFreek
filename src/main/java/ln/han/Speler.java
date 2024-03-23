@@ -1,7 +1,5 @@
 package ln.han;
 
-import java.util.ArrayList;
-
 public class Speler {
     private int score;
 
@@ -15,7 +13,8 @@ public class Speler {
         return score;
     }
 
-    public void verhoogScore() {
-        score++;
+
+    public void setScore(int score) {
+        this.score = score;
     }
 }

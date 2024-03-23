@@ -2,52 +2,35 @@ package ln.han;
 
 public abstract class QuizVraag {
 
-    private String vraagTekst;
-    private boolean isActueel;
-    private int vraagId;
-
-    private Categorie categorie;
+    private final String vraagTekst;
+    private final int vraagId;
+    private final Categorie categorie;
+    private final boolean isActueel;
 
     public QuizVraag(String vraagTekst, boolean isActueel, int vraagId, Categorie categorie) {
         this.vraagTekst = vraagTekst;
-        this.isActueel = isActueel;
         this.vraagId = vraagId;
         this.categorie = categorie;
+        this.isActueel = isActueel;
     }
 
 
     // getters and setters
 
     public String getVraagTekst() {
-        return vraagTekst;
-    }
-
-    public void setVraagTekst(String vraagTekst) {
-        this.vraagTekst = vraagTekst;
-    }
-
-    public boolean isActueel() {
-        return isActueel;
-    }
-
-    public void setActueel(boolean actueel) {
-        isActueel = actueel;
+        if (isActueel) {
+            return vraagTekst;
+        }
+        return null;
     }
 
     public int getVraagId() {
         return vraagId;
     }
 
-    public void setVraagId(int vraagId) {
-        this.vraagId = vraagId;
-    }
-
     public Categorie getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(Categorie categorie) {
-        this.categorie = categorie;
-    }
 
 }

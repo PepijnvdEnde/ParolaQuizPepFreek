@@ -11,13 +11,13 @@ import static ln.han.Categorie.*;
 
 public class VraagRepo {
 
-    private ArrayList<QuizVraag> vragen = new ArrayList<>();
+    private final ArrayList<QuizVraag> vragen = new ArrayList<>();
 
     public VraagRepo() {
         // 8 Muziek vragen
         // antwoord: Trompet
         vragen.add(new MeerkeuzeQuizVraag("Welke van de volgende instrumenten behoort tot de koperblazers?", true, 1, MUZIEK,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Viool");
                     add("Fluit");
                     add("Trompet");
@@ -27,7 +27,7 @@ public class VraagRepo {
         vragen.add(new OpenQuizVraag("Wat is de artiestnaam van de rapper Marshall Bruce Mathers III?", true, 2, MUZIEK));
         // antwoord: Freddie Mercury
         vragen.add(new MeerkeuzeQuizVraag("Wie is de leadzanger van de band \"Queen\"?", true, 3, MUZIEK,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Freddie Mercury");
                     add("John Lennon");
                     add("Mick Jagger");
@@ -37,7 +37,7 @@ public class VraagRepo {
         vragen.add(new OpenQuizVraag("Wat is de naam van het iconische album van Michael Jackson uit 1982 dat meer dan 65 miljoen exemplaren heeft verkocht wereldwijd?", true, 4, MUZIEK));
         // antwoord: Lindsey Stirling
         vragen.add(new MeerkeuzeQuizVraag("Welke muzikant staat bekend om het spelen van een viool met een oranje haarstijl en elektronische muziek te combineren?", true, 5, MUZIEK,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("David Garrett");
                     add("Vanessa Mae");
                     add("Nigel Kennedy");
@@ -47,7 +47,7 @@ public class VraagRepo {
         vragen.add(new OpenQuizVraag("Hoe heet de zanger van de band \"The Rolling Stones\"?", true, 6, MUZIEK));
         // antwoord: Saxofoon
         vragen.add(new MeerkeuzeQuizVraag("Welk instrument wordt bespeeld door Kenny G, een van de meest succesvolle smooth jazz-artiesten?", true, 7, MUZIEK,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Saxofoon");
                     add("Trompet");
                     add("Klarinet");
@@ -59,7 +59,7 @@ public class VraagRepo {
         // 8 Sport vragen
         // antwoord: Golf
         vragen.add(new MeerkeuzeQuizVraag("In welke sport wordt de term \"Birdie\" gebruikt?", true, 9, SPORT,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Tennis");
                     add("Golf");
                     add("Voetbal");
@@ -69,7 +69,7 @@ public class VraagRepo {
         vragen.add(new OpenQuizVraag("Hoeveel spelers zijn er in een baseball team?", true, 10, SPORT));
         // antwoord: verenigde staten
         vragen.add(new MeerkeuzeQuizVraag("Welk land heeft de meeste medailles gewonnen in de geschiedenis van de Olympische Zomerspelen?", true, 11, SPORT,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("China");
                     add("Rusland");
                     add("Verenigde Staten");
@@ -79,7 +79,7 @@ public class VraagRepo {
         vragen.add(new OpenQuizVraag("Hoeveel punten is een basketbalveld waard als de speler buiten de driepuntslijn scoort?", true, 12, SPORT));
         // antwoord: 5
         vragen.add(new MeerkeuzeQuizVraag("Hoeveel spelers zijn er in een standaard basketbalteam op het veld tijdens een wedstrijd?", true, 13, SPORT,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("6");
                     add("7");
                     add("8");
@@ -89,7 +89,7 @@ public class VraagRepo {
         vragen.add(new OpenQuizVraag("Wie heeft het wereldrecord op de 100 meter sprint?", true, 14, SPORT));
         // antwoord: Zwemmen
         vragen.add(new MeerkeuzeQuizVraag("In welke sport heeft Michael Phelps de meeste Olympische medailles gewonnen?", true, 15, SPORT,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Atletiek");
                     add("Turnen");
                     add("Wielrennen");
@@ -101,7 +101,7 @@ public class VraagRepo {
         // 8 Taal vragen
         // antwoord: India
         vragen.add(new MeerkeuzeQuizVraag("Welk land heeft de meeste officiële talen?", true, 17, TAAL,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("India");
                     add("China");
                     add("Verenigde Staten");
@@ -109,13 +109,13 @@ public class VraagRepo {
         }}));
         // antwoord: waar
         vragen.add(new MeerkeuzeQuizVraag("Waar of niet waar: \"Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo\" is een correcte zin in het Engels.", true, 18, TAAL,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Waar");
                     add("Niet waar");
         }}));
         // antwoord: Portugees
         vragen.add(new MeerkeuzeQuizVraag("Wat is de officiële taal van Brazilië?", true, 19, TAAL,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Spaans");
                     add("Engels");
                     add("Portugees");
@@ -125,7 +125,7 @@ public class VraagRepo {
         vragen.add(new OpenQuizVraag("Hoeveel letters heeft het Zweeds alfabet?", true, 20, TAAL));
         // antwoord: Mandarijn
         vragen.add(new MeerkeuzeQuizVraag("Wat is de meest gesproken taal ter wereld?", true, 21, TAAL,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Engels");
                     add("Mandarijn");
                     add("Hindi");
@@ -133,7 +133,7 @@ public class VraagRepo {
         }}));
         // antwoord: Grieks
         vragen.add(new MeerkeuzeQuizVraag("Waar komt de naam alfabet vandaan?", true, 22, TAAL,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Grieks");
                     add("Latijn");
                     add("Arabisch");
@@ -141,7 +141,7 @@ public class VraagRepo {
         }}));
         // antwoord: dan
         vragen.add(new MeerkeuzeQuizVraag("In de zin \"Ik ben groter ___ jij\", welk woord moet er op de plek van de streepjes komen?", true, 23, TAAL,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("als");
                     add("dan");
                     add("dan als");
@@ -149,7 +149,7 @@ public class VraagRepo {
                 }}));
         // antwoord: Niet Waar
         vragen.add(new MeerkeuzeQuizVraag("Fries is ontstaan uit het Nederlands.", false, 24, TAAL,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Waar");
                     add("Niet waar");
         }}));
@@ -157,7 +157,7 @@ public class VraagRepo {
         // 8 Geografie vragen
         // antwoord: Rusland
         vragen.add(new MeerkeuzeQuizVraag("Welk land heeft de meeste tijdzones ter wereld?", true, 25, GEOGRAFIE,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Verenigde Staten");
                     add("China");
                     add("Rusland");
@@ -167,7 +167,7 @@ public class VraagRepo {
         vragen.add(new OpenQuizVraag("Hoe heet de hoofdstad van China?", true, 26, GEOGRAFIE));
         // antwoord: Canberra
         vragen.add(new MeerkeuzeQuizVraag("Wat is de hoofdstad van Australië?", true, 27, GEOGRAFIE,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Sydney");
                     add("Melbourne");
                     add("Perth");
@@ -177,7 +177,7 @@ public class VraagRepo {
         vragen.add(new OpenQuizVraag("Hoeveel continenten zijn er op aarde?", true, 28, GEOGRAFIE));
         // antwoord: Stille Oceaan
         vragen.add(new MeerkeuzeQuizVraag("Wat is de grootste oceaan ter wereld?", true, 29, GEOGRAFIE,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Atlantische Oceaan");
                     add("Stille Oceaan");
                     add("Arctische Oceaan");
@@ -187,7 +187,7 @@ public class VraagRepo {
         vragen.add(new OpenQuizVraag("Hoeveel landen zijn er op aarde? Volgens de VN", true, 30, GEOGRAFIE));
         // antwoord: Reykjavik
         vragen.add(new MeerkeuzeQuizVraag("Wat is de meest noordelijke hoofdstad ter wereld?", true, 31, GEOGRAFIE,
-                new ArrayList<String>() {{
+                new ArrayList<>() {{
                     add("Oslo");
                     add("Helsinki");
                     add("Reykjavik");
@@ -198,38 +198,6 @@ public class VraagRepo {
         vragen.add(new OpenQuizVraag("Hoeveel landen delen het eiland Borneo?", true, 32, GEOGRAFIE));
     }
 
-    public ArrayList<QuizVraag> getVragen() {
-        return vragen;
-    }
-
-    public void setVragen(ArrayList<QuizVraag> vragen) {
-        this.vragen = vragen;
-    }
-
-    public void addVraag(QuizVraag vraag) {
-        vragen.add(vraag);
-    }
-
-    public void removeVraag(QuizVraag vraag) {
-        vragen.remove(vraag);
-    }
-
-    public void updateVraag(QuizVraag oudeVraag, QuizVraag nieuweVraag) {
-        vragen.set(vragen.indexOf(oudeVraag), nieuweVraag);
-    }
-
-    public QuizVraag getVraag(int index) {
-        return vragen.get(index);
-    }
-
-    public QuizVraag getVraagById(int id) {
-        for (QuizVraag vraag : vragen) {
-            if (vraag.getVraagId() == id) {
-                return vraag;
-            }
-        }
-        return null;
-    }
     public ArrayList<QuizVraag> getVragenByCategorie(Categorie categorie) {
         ArrayList<QuizVraag> vragenByCategorie = new ArrayList<>();
         for (QuizVraag vraag : vragen) {
