@@ -8,7 +8,7 @@ public class StrengePuntenTelling implements PuntenTelling {
     }
 
     @Override
-    public int berekenScore(List<Boolean> correcteVragen, String gevormdWoord, long tijd) {
-        return correcteVragen.size() + gevormdWoord.length() + (int) tijd / 1000 * 2;
+    public int berekenScore(int correcteVragen, String gevormdWoord, long tijd) {
+        return correcteVragen + gevormdWoord.length() + (int) tijd / 1000 * 2;
     }
 }

@@ -6,8 +6,8 @@ public class MeerkeuzeQuizVraag extends QuizVraag {
 
     private final ArrayList<String> antwoorden;
 
-    public MeerkeuzeQuizVraag(String vraagTekst, boolean isActueel, int vraagId, Categorie categorie, ArrayList<String> antwoorden) {
-        super(vraagTekst, isActueel, vraagId, categorie);
+    public MeerkeuzeQuizVraag(String vraagTekst, int vraagId, Categorie categorie, ArrayList<String> antwoorden) {
+        super(vraagTekst, vraagId, categorie);
         this.antwoorden = antwoorden;
     }
 

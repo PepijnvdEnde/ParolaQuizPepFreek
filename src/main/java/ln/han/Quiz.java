@@ -16,7 +16,7 @@ public class Quiz {
 
     private final List<Letter> letters = new ArrayList<>();
 
-    private final List<Boolean> correcteVragen = new ArrayList<>();
+    private int correcteVragen = 0;
 
     private long beginTijd;
 
@@ -35,22 +35,23 @@ public class Quiz {
         beantwoordVragen();
         eindTijd = System.currentTimeMillis();
         controleerAntwoorden(spelerAntwoorden);
-        woordMaken();
+        String woord = woordMaken();
+        speler.setScore(berekenScore(woord));
         System.out.println("Je score is: " + speler.getScore());
-
-
     }
 
     private void beantwoordVragen() {
         Scanner scanner = new Scanner(System.in);
         for (QuizVraag quizVraag : quizVragen) {
             System.out.println(quizVraag.getVraagTekst());
-            SpelerAntwoord spelerAntwoord = new SpelerAntwoord(scanner.nextLine(), quizVraag.getVraagId());
+            SpelerAntwoord spelerAntwoord = new SpelerAntwoord(scanner.nextLine(), quizVraag.getVraagId(), speler);
+            speler.addAntwoord(spelerAntwoord);
             beantwoordVraag(spelerAntwoord);
         }
+        scanner.close();
     }
 
-    private void woordMaken() {
+    private String woordMaken() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Je behaalde letters zijn: " + letters);
         System.out.println("Vorm een woord met de letters: ");
@@ -59,19 +60,17 @@ public class Quiz {
             System.out.println("Het gevormde woord is niet correct.");
             woordMaken();
         }
-        speler.setScore(berekenScore(gevormdWoord));
-
+        scanner.close();
+        return gevormdWoord;
     }
 
 
     private void controleerAntwoorden(List<SpelerAntwoord> spelerAntwoorden) {
         for (SpelerAntwoord spelerAntwoord : spelerAntwoorden) {
             for (Antwoord antwoord : antwoorden) {
-                if (antwoord.getVraagId() == spelerAntwoord.vraagId()) {
-                    if (antwoord.isCorrect(spelerAntwoord.antwoord())) {
-                        correcteVragen.add(true);
+                if (antwoord.getVraagId() == spelerAntwoord.vraagId() && antwoord.isCorrect(spelerAntwoord.antwoord())) {
+                        correcteVragen++;
                         letters.add(antwoord.getLetter());
-                    }
                 }
             }
         }
@@ -103,8 +102,6 @@ public class Quiz {
         return eindTijd - beginTijd;
     }
 
-
-    // Getters and Setters
 
     public void setQuizVragen(ArrayList<QuizVraag> quizVragen) {
         this.quizVragen = quizVragen;

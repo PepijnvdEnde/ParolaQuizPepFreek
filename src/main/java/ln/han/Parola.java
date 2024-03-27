@@ -22,7 +22,7 @@ public class Parola {
         PuntenTelling puntenTelling = scanner.nextLine().equals("1") ? new StrengePuntenTelling() : new NormalePuntenTelling();
         QuizRepo quizRepo = new QuizRepo(speler, puntenTelling);
         quizRepo.getQuizByCategorie(categorie).speelQuiz();
-
-
+        scanner.close();
+        
     }
 }
