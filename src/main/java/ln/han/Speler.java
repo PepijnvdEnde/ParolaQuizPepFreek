@@ -8,7 +8,10 @@ public class Speler {
 
     private List<SpelerAntwoord> antwoordList;
 
-    public Speler() {
+    String naam;
+
+    public Speler(String naam) {
+        this.naam = naam;
         this.score = 0;
         antwoordList = new ArrayList<>();
     }

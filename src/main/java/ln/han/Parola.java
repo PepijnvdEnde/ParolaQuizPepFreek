@@ -7,10 +7,11 @@ import java.util.Scanner;
 public class Parola {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Speler speler = new Speler();
+        System.out.println("Welkom bij de quiz! Wat is je naam?");
+        Speler speler = new Speler(scanner.nextLine());
 
 
-        System.out.println("Welkom bij de quiz! Kies een categorie:");
+        System.out.println("Kies een categorie:");
         System.out.println("Muziek");
         System.out.println("Sport");
         System.out.println("Taal");
