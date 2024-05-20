@@ -1,8 +1,9 @@
 package ln.han;
 
+
 public class OpenQuizVraag extends QuizVraag {
-    public OpenQuizVraag(String vraagTekst, int vraagId, Categorie categorie) {
-        super(vraagTekst, vraagId, categorie);
+    public OpenQuizVraag(String vraagTekst, Categorie categorie, Antwoord antwoorden) {
+        super(vraagTekst, categorie, antwoorden);
     }
 
     @Override

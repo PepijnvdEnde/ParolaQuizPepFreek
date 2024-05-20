@@ -1,41 +1,32 @@
 package ln.han.repo;
 
 import ln.han.Categorie;
-import ln.han.PuntenTelling;
 import ln.han.Quiz;
-import ln.han.Speler;
 
 import static ln.han.Categorie.*;
 
 public class QuizRepo {
 
-    private final Quiz muziekQuiz;
+    private final Quiz muziekQuiz = new Quiz();
 
-    private final Quiz sportQuiz;
+    private final Quiz sportQuiz = new Quiz();
 
-    private final Quiz taalQuiz;
+    private final Quiz taalQuiz = new Quiz();
 
-    private final Quiz geografieQuiz;
+    private final Quiz geografieQuiz = new Quiz();
 
     VraagRepo vraagRepo = new VraagRepo();
 
-    AntwoordenRepo antwoordenRepo = new AntwoordenRepo();
 
-
-    public QuizRepo(Speler speler, PuntenTelling puntenTelling) {
-        muziekQuiz = new Quiz(puntenTelling, speler);
-        sportQuiz = new Quiz(puntenTelling, speler);
-        taalQuiz = new Quiz(puntenTelling, speler);
-        geografieQuiz = new Quiz(puntenTelling, speler);
+    public QuizRepo() {
+        // set muziek vragen en antwoorden
         muziekQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(MUZIEK));
-        muziekQuiz.setAntwoorden(antwoordenRepo.getAntwoordenByCategorie(MUZIEK));
+        // set sport vragen en antwoorden
         sportQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(SPORT));
-        sportQuiz.setAntwoorden(antwoordenRepo.getAntwoordenByCategorie(SPORT));
+        // set taal vragen en antwoorden
         taalQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(TAAL));
-        taalQuiz.setAntwoorden(antwoordenRepo.getAntwoordenByCategorie(TAAL));
+        // set geografie vragen en antwoorden
         geografieQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(GEOGRAFIE));
-        geografieQuiz.setAntwoorden(antwoordenRepo.getAntwoordenByCategorie(GEOGRAFIE));
-
     }
 
     public Quiz getQuizByCategorie(Categorie categorie) {
@@ -46,6 +37,4 @@ public class QuizRepo {
             case GEOGRAFIE -> geografieQuiz;
         };
     }
-
-
 }

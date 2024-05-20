@@ -1,29 +1,31 @@
 package ln.han;
 
-import ln.han.repo.QuizRepo;
 
 import java.util.Scanner;
 
 public class Parola {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welkom bij de quiz! Wat is je naam?");
-        Speler speler = new Speler(scanner.nextLine());
+        ParolaController parola = ParolaController.getInstance();
+
+        System.out.println("Enter your player name: ");
+        String playerName = scanner.nextLine();
 
 
-        System.out.println("Kies een categorie:");
-        System.out.println("Muziek");
-        System.out.println("Sport");
-        System.out.println("Taal");
-        System.out.println("Geografie");
-        Categorie categorie = Categorie.valueOf(scanner.nextLine().toUpperCase());
-        System.out.println("Kies een puntentelling methode:");
-        System.out.println("1. Strenge punten telling");
-        System.out.println("2. Normale punten telling");
-        PuntenTelling puntenTelling = scanner.nextLine().equals("1") ? new StrengePuntenTelling() : new NormalePuntenTelling();
-        QuizRepo quizRepo = new QuizRepo(speler, puntenTelling);
-        quizRepo.getQuizByCategorie(categorie).speelQuiz();
-        scanner.close();
-        
+        System.out.println("The 8-question quiz starts. Good luck!");
+        parola.startQuiz(playerName);
+        do {
+            System.out.println(parola.nextQuestion(playerName));
+            System.out.println("Give your answer to this question:");
+            String answer = scanner.nextLine();
+            parola.processAnswer(playerName, answer);
+        } while (!parola.quizFinished(playerName));
+
+        System.out.println("You've earned the following letters: " + parola.getLettersForRightAnswers(playerName));
+        System.out.print("Make a word, as long as possible, that contains these letters: ");
+        String word = scanner.nextLine();
+
+        int score = parola.calculateScore(playerName, word);
+        System.out.println("Score: " + score);
     }
 }

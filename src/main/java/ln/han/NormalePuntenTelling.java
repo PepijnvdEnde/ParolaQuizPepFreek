@@ -1,7 +1,5 @@
 package ln.han;
 
-import java.util.List;
-
 public class NormalePuntenTelling implements PuntenTelling {
     public NormalePuntenTelling() {
         super();

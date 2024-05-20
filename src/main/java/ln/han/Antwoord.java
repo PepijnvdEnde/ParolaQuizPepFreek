@@ -1,22 +1,26 @@
 package ln.han;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Antwoord {
-    private ArrayList<String> antwoorden = new ArrayList<>();
-    private final int vraagId;
+    private List<String> antwoorden;
+
+    private final int id;
 
     private final Letter letter;
 
-    public Antwoord(String antwoordTekst, int vraagId, Letter letter) {
+    public Antwoord(String antwoordTekst, int id, Letter letter) {
+        this.antwoorden = new ArrayList<>();
         this.antwoorden.add(antwoordTekst);
-        this.vraagId = vraagId;
+        this.id = id;
         this.letter = letter;
     }
 
-    public Antwoord(ArrayList<String> antwoorden, int vraagId, Letter letter) {
-        this.antwoorden = antwoorden;
-        this.vraagId = vraagId;
+    public Antwoord(List<String> antwoorden, int vraagId, Letter letter) {
+        this.antwoorden = new ArrayList<>();
+        this.antwoorden.addAll(antwoorden);
+        this.id = vraagId;
         this.letter = letter;
     }
 
@@ -29,12 +33,12 @@ public class Antwoord {
         return false;
     }
 
-    public int getVraagId() {
-        return vraagId;
-    }
-
     public Letter getLetter() {
         return letter;
+    }
+
+    public int getId() {
+        return id;
     }
 
 }
