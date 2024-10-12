@@ -7,8 +7,8 @@ public class SpelerStatus {
     private final Speler speler;
     private final Quiz quiz;
     private int score;
-    private List<QuizVraag> beantwoordeVragen;
-    private long startTime;
+    private final List<QuizVraag> beantwoordeVragen;
+    private final long startTime;
     private final List<Letter> letters;
 
 

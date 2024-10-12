@@ -6,8 +6,8 @@ public class MeerkeuzeQuizVraag extends QuizVraag {
 
     private final List<String> keuzes;
 
-    public MeerkeuzeQuizVraag(String vraagTekst, Categorie categorie, List<String> keuzes, Antwoord antwoord) {
-        super(vraagTekst, categorie, antwoord);
+    public MeerkeuzeQuizVraag(int vraagId, String vraagTekst, Categorie categorie, List<String> keuzes, List<String> antwoorden, Letter letter) {
+        super(vraagId,vraagTekst, categorie, antwoorden, letter);
         this.keuzes = keuzes;
     }
 
@@ -17,20 +17,20 @@ public class MeerkeuzeQuizVraag extends QuizVraag {
     }
 
     private String getkeuzesString() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         if (!keuzes.isEmpty()) {
-            sb.append("A: ").append(keuzes.getFirst()).append("\n");
+            stringBuilder.append("A: ").append(keuzes.getFirst()).append("\n");
         }
         if (keuzes.size() > 1) {
-            sb.append("B: ").append(keuzes.get(1)).append("\n");
+            stringBuilder.append("B: ").append(keuzes.get(1)).append("\n");
         }
         if (keuzes.size() > 2) {
-            sb.append("C: ").append(keuzes.get(2)).append("\n");
+            stringBuilder.append("C: ").append(keuzes.get(2)).append("\n");
         }
         if (keuzes.size() > 3) {
-            sb.append("D: ").append(keuzes.get(3));
+            stringBuilder.append("D: ").append(keuzes.get(3));
         }
-        return sb.toString();
+        return stringBuilder.toString();
     }
 
 }

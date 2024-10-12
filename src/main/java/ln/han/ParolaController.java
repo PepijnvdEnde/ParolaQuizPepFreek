@@ -37,11 +37,10 @@ public class ParolaController {
 
     public void processAnswer(String playerName, String answer) {
         SpelerStatus spelerStatus = spelerStatusMap.get(playerName);
-        Antwoord antwoord = spelerStatus.getQuiz().getQuizVraag(spelerStatus.getBeantwoordeVragen().size() - 1).getAntwoorden();
-        if (antwoord.isCorrect(answer)) {
+        QuizVraag quizVraag = spelerStatus.getQuiz().getQuizVraag(spelerStatus.getBeantwoordeVragen().size() - 1);
+        if (quizVraag.isCorrect(answer)) {
             spelerStatus.incrementScore(1);
-            spelerStatus.addLetter(antwoord.getLetter());
-
+            spelerStatus.addLetter(quizVraag.getLetter());
         }
     }
 

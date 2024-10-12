@@ -19,8 +19,4 @@ public class Quiz {
     public QuizVraag getQuizVraag(int index) {
         return quizVragen.get(index);
     }
-
-    public Antwoord getAntwoord(int index) {
-        return quizVragen.get(index).getAntwoorden();
-    }
 }

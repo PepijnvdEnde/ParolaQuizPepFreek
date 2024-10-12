@@ -1,0 +1,381 @@
+{
+  "vragen": {
+    "MUZIEK": [
+      {
+        "categorie": "MUZIEK",
+        "vraag": "Welke van de volgende instrumenten behoort tot de koperblazers?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Viool",
+          "Fluit",
+          "Trompet",
+          "Gitaar"
+        ],
+        "vraagId": 1,
+        "antwoord": "trompet",
+        "letter": "A"
+      },
+      {
+        "categorie": "MUZIEK",
+        "vraag": "Wat is de artiestnaam van de rapper Marshall Bruce Mathers III?",
+        "type": "open",
+        "vraagId": 2,
+        "antwoord": "eminem",
+        "letter": "B"
+      },
+      {
+        "categorie": "MUZIEK",
+        "vraag": "Wie is de leadzanger van de band \"Queen\"?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Freddie Mercury",
+          "Mick Jagger",
+          "Elton John",
+          "David Bowie"
+        ],
+        "vraagId": 3,
+        "antwoord": "freddie mercury",
+        "letter": "C"
+      },
+      {
+        "categorie": "MUZIEK",
+        "vraag": "Wat is de naam van het iconische album van Michael Jackson uit 1982 dat meer dan 65 miljoen exemplaren heeft verkocht wereldwijd?",
+        "type": "open",
+        "vraagId": 4,
+        "antwoord": "thriller",
+        "letter": "D"
+      },
+      {
+        "categorie": "MUZIEK",
+        "vraag": "Welke muzikant staat bekend om het spelen van een viool met een oranje haarstijl en elektronische muziek te combineren?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "David Garrett",
+          "Lindsey Stirling",
+          "Vanessa Mae",
+          "Nigel Kennedy"
+        ],
+        "vraagId": 5,
+        "antwoord": "lindsey stirling",
+        "letter": "E"
+      },
+      {
+        "categorie": "MUZIEK",
+        "vraag": "Hoe heet de zanger van de band \"The Rolling Stones\"?",
+        "type": "open",
+        "vraagId": 6,
+        "antwoord": "mick jagger",
+        "letter": "F"
+      },
+      {
+        "categorie": "MUZIEK",
+        "vraag": "Welk instrument wordt bespeeld door Kenny G, een van de meest succesvolle smooth jazz-artiesten?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Saxofoon",
+          "Trompet",
+          "Klarinet",
+          "Trombone"
+        ],
+        "vraagId": 7,
+        "antwoord": "saxofoon",
+        "letter": "G"
+      },
+      {
+        "categorie": "MUZIEK",
+        "vraag": "Hoe heet de zanger van de band \"Nirvana\"?",
+        "type": "open",
+        "vraagId": 8,
+        "antwoord": "kurt cobain",
+        "letter": "H"
+      }
+    ],
+    "SPORT": [
+      {
+        "categorie": "SPORT",
+        "vraag": "In welke sport wordt de term \"Birdie\" gebruikt?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Golf",
+          "Tennis",
+          "Voetbal",
+          "Basketbal"
+        ],
+        "vraagId": 1,
+        "antwoord": "golf",
+        "letter": "I"
+      },
+      {
+        "categorie": "SPORT",
+        "vraag": "Hoeveel spelers zijn er in een baseball team?",
+        "type": "open",
+        "vraagId": 2,
+        "antwoord": "9",
+        "letter": "J"
+      },
+      {
+        "categorie": "SPORT",
+        "vraag": "Welk land heeft de meeste medailles gewonnen in de geschiedenis van de Olympische Zomerspelen?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Verenigde Staten",
+          "China",
+          "Rusland",
+          "Duitsland"
+        ],
+        "vraagId": 3,
+        "antwoord": "verenigde staten",
+        "letter": "K"
+      },
+      {
+        "categorie": "SPORT",
+        "vraag": "In basketbal, hoeveel punten is een treffer waard als de speler buiten de buitenste lijn bij de hoop scoort?",
+        "type": "open",
+        "vraagId": 4,
+        "antwoord": "3",
+        "letter": "L"
+      },
+      {
+        "categorie": "SPORT",
+        "vraag": "Hoeveel spelers zijn er in een standaard basketbalteam op het veld tijdens een wedstrijd?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "vraagId": 5,
+        "antwoord": "5",
+        "letter": "M"
+      },
+      {
+        "categorie": "SPORT",
+        "vraag": "Wie heeft het wereldrecord op de 100 meter sprint?",
+        "type": "open",
+        "vraagId": 6,
+        "antwoord": "usain bolt",
+        "letter": "N"
+      },
+      {
+        "categorie": "SPORT",
+        "vraag": "In welke sport heeft Michael Phelps de meeste Olympische medailles gewonnen?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Zwemmen",
+          "Atletiek",
+          "Turnen",
+          "Wielrennen"
+        ],
+        "vraagId": 7,
+        "antwoord": "zwemmen",
+        "letter": "O"
+      },
+      {
+        "categorie": "SPORT",
+        "vraag": "Hoeveel spelers zijn er in een voetbalteam?",
+        "type": "open",
+        "vraagId": 8,
+        "antwoord": "11",
+        "letter": "P"
+      }
+    ],
+    "TAAL": [
+      {
+        "categorie": "TAAL",
+        "vraag": "Welk land heeft de meeste officiële talen?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Zuid-Afrika",
+          "India",
+          "Verenigde Staten",
+          "Zwitserland"
+        ],
+        "vraagId": 1,
+        "antwoord": "india",
+        "letter": "Q"
+      },
+      {
+        "categorie": "TAAL",
+        "vraag": "Waar of niet waar: \"Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo\" is een correcte zin in het Engels.",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Waar",
+          "Niet waar"
+        ],
+        "vraagId": 2,
+        "antwoord": "waar",
+        "letter": "R"
+      },
+      {
+        "categorie": "TAAL",
+        "vraag": "Wat is de officiële taal van Brazilië?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Portugees",
+          "Spaans",
+          "Engels",
+          "Frans"
+        ],
+        "vraagId": 3,
+        "antwoord": "portugees",
+        "letter": "S"
+      },
+      {
+        "categorie": "TAAL",
+        "vraag": "Hoeveel letters heeft het Zweeds alfabet?",
+        "type": "open",
+        "vraagId": 4,
+        "antwoord": "29",
+        "letter": "T"
+      },
+      {
+        "categorie": "TAAL",
+        "vraag": "Wat is de meest gesproken taal ter wereld?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Engels",
+          "Mandarijn",
+          "Spaans",
+          "Hindi"
+        ],
+        "vraagId": 5,
+        "antwoord": "mandarijn",
+        "letter": "U"
+      },
+      {
+        "categorie": "TAAL",
+        "vraag": "Waar komt de naam alfabet vandaan?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Grieks",
+          "Latijn",
+          "Arabisch",
+          "Hebreeuws"
+        ],
+        "vraagId": 6,
+        "antwoord": "grieks",
+        "letter": "V"
+      },
+      {
+        "categorie": "TAAL",
+        "vraag": "In de zin \"Ik ben groter ___ jij\", welk woord moet er op de plek van de streepjes komen?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "dan",
+          "als",
+          "als dan",
+          "dan als"
+        ],
+        "vraagId": 7,
+        "antwoord": "dan",
+        "letter": "W"
+      },
+      {
+        "categorie": "TAAL",
+        "vraag": "Fries is ontstaan uit het Nederlands.",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Waar",
+          "Niet waar"
+        ],
+        "vraagId": 8,
+        "antwoord": "niet waar",
+        "letter": "X"
+      }
+    ],
+    "GEOGRAFIE": [
+      {
+        "categorie": "GEOGRAFIE",
+        "vraag": "Welk land heeft de meeste tijdzones ter wereld?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Rusland",
+          "Verenigde Staten",
+          "China",
+          "Australië"
+        ],
+        "vraagId": 1,
+        "antwoord": "rusland",
+        "letter": "Y"
+      },
+      {
+        "categorie": "GEOGRAFIE",
+        "vraag": "Hoe heet de hoofdstad van China?",
+        "type": "open",
+        "vraagId": 2,
+        "antwoord": [
+          "beijing",
+          "peking"
+        ],
+        "letter": "Z"
+      },
+      {
+        "categorie": "GEOGRAFIE",
+        "vraag": "Wat is de hoofdstad van Australië?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Sydney",
+          "Melbourne",
+          "Canberra",
+          "Perth"
+        ],
+        "vraagId": 3,
+        "antwoord": "canberra",
+        "letter": "A"
+      },
+      {
+        "categorie": "GEOGRAFIE",
+        "vraag": "Hoeveel continenten zijn er op aarde?",
+        "type": "open",
+        "vraagId": 4,
+        "antwoord": "7",
+        "letter": "B"
+      },
+      {
+        "categorie": "GEOGRAFIE",
+        "vraag": "Wat is de grootste oceaan ter wereld?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Stille Oceaan",
+          "Atlantische Oceaan",
+          "Indische Oceaan",
+          "Arctische Oceaan"
+        ],
+        "vraagId": 5,
+        "antwoord": "stille oceaan",
+        "letter": "C"
+      },
+      {
+        "categorie": "GEOGRAFIE",
+        "vraag": "Hoeveel landen zijn er op aarde? Volgens de VN",
+        "type": "open",
+        "vraagId": 6,
+        "antwoord": "195",
+        "letter": "D"
+      },
+      {
+        "categorie": "GEOGRAFIE",
+        "vraag": "Wat is de meest noordelijke hoofdstad ter wereld?",
+        "type": "meerkeuze",
+        "antwoorden": [
+          "Reykjavik",
+          "Oslo",
+          "Helsinki",
+          "Tallinn"
+        ],
+        "vraagId": 7,
+        "antwoord": "reykjavik",
+        "letter": "E"
+      },
+      {
+        "categorie": "GEOGRAFIE",
+        "vraag": "Hoeveel landen delen het eiland Borneo?",
+        "type": "open",
+        "vraagId": 8,
+        "antwoord": "3",
+        "letter": "F"
+      }
+    ]
+  }
+}

@@ -1,6 +1,5 @@
 package ln.han;
 
-import java.util.List;
 
 public class StrengePuntenTelling implements PuntenTelling {
     public StrengePuntenTelling() {

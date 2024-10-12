@@ -15,18 +15,18 @@ public class QuizRepo {
 
     private final Quiz geografieQuiz = new Quiz();
 
-    VraagRepo vraagRepo = new VraagRepo();
+    private final VraagRepo vraagRepo = new VraagRepo();
 
 
     public QuizRepo() {
         // set muziek vragen en antwoorden
-        muziekQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(MUZIEK));
+        muziekQuiz.setQuizVragen(vraagRepo.getWillkeurigeVragenVanCategorie(MUZIEK));
         // set sport vragen en antwoorden
-        sportQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(SPORT));
+        sportQuiz.setQuizVragen(vraagRepo.getWillkeurigeVragenVanCategorie(SPORT));
         // set taal vragen en antwoorden
-        taalQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(TAAL));
+        taalQuiz.setQuizVragen(vraagRepo.getWillkeurigeVragenVanCategorie(TAAL));
         // set geografie vragen en antwoorden
-        geografieQuiz.setQuizVragen(vraagRepo.getVragenByCategorie(GEOGRAFIE));
+        geografieQuiz.setQuizVragen(vraagRepo.getWillkeurigeVragenVanCategorie(GEOGRAFIE));
     }
 
     public Quiz getQuizByCategorie(Categorie categorie) {
