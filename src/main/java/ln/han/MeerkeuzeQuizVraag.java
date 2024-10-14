@@ -7,19 +7,19 @@ public class MeerkeuzeQuizVraag extends QuizVraag {
     private final List<String> keuzes;
 
     public MeerkeuzeQuizVraag(int vraagId, String vraagTekst, Categorie categorie, List<String> keuzes, List<String> antwoorden, Letter letter) {
-        super(vraagId,vraagTekst, categorie, antwoorden, letter);
+        super(vraagId, vraagTekst, categorie, antwoorden, letter);
         this.keuzes = keuzes;
     }
 
     @Override
     public String getVraagTekst() {
-        return super.getVraagTekst() + "\n" + getkeuzesString();
+        return super.getVraagTekst() + "\n" + getKeuzesString();
     }
 
-    private String getkeuzesString() {
+    private String getKeuzesString() {
         StringBuilder stringBuilder = new StringBuilder();
         if (!keuzes.isEmpty()) {
-            stringBuilder.append("A: ").append(keuzes.getFirst()).append("\n");
+            stringBuilder.append("A: ").append(keuzes.get(0)).append("\n");
         }
         if (keuzes.size() > 1) {
             stringBuilder.append("B: ").append(keuzes.get(1)).append("\n");
@@ -32,5 +32,4 @@ public class MeerkeuzeQuizVraag extends QuizVraag {
         }
         return stringBuilder.toString();
     }
-
 }
