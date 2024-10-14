@@ -8,10 +8,10 @@ public class ParolaController {
 
     private final QuizRepo quizRepo = new QuizRepo();
 
-    private final PuntenTelling puntenTelling = new NormalePuntenTelling();
+    private PuntenTelling puntenTelling = new NormalePuntenTelling();
 
     private final Map<String, SpelerStatus> spelerStatusMap = new HashMap<>();
-
+    private final Map<String, Long> startTimeMap = new HashMap<>(); // To track the start time of each quiz
 
     public static ParolaController getInstance() {
         return new ParolaController();
@@ -24,7 +24,7 @@ public class ParolaController {
         System.out.println("Gekozen categorie: " + categorie.toString().toLowerCase());
         SpelerStatus spelerStatus = new SpelerStatus(speler, quiz);
         spelerStatusMap.put(playerName, spelerStatus);
-
+        startTimeMap.put(playerName, System.currentTimeMillis()); // Record the start time
     }
 
     public String nextQuestion(String playerName) {
@@ -32,7 +32,6 @@ public class ParolaController {
         QuizVraag quizVraag = spelerStatus.getQuiz().getQuizVraag(spelerStatus.getBeantwoordeVragen().size());
         spelerStatus.addBeantwoordeVraag(quizVraag);
         return quizVraag.getVraagTekst();
-
     }
 
     public void processAnswer(String playerName, String answer) {
@@ -54,14 +53,22 @@ public class ParolaController {
 
     public int calculateScore(String playerName, String word) {
         SpelerStatus spelerStatus = spelerStatusMap.get(playerName);
-        return puntenTelling.berekenScore(spelerStatus.getScore(), word, spelerStatus.getElapsedTime());
+        return puntenTelling.berekenScore(spelerStatus.getScore(), word, getElapsedTime(playerName));
     }
 
+    public int getCorrectAnswersCount(String playerName) {
+        SpelerStatus spelerStatus = spelerStatusMap.get(playerName);
+        return spelerStatus.getScore(); // Assuming score represents the number of correct answers
+    }
+
+    public long getElapsedTime(String playerName) {
+        long startTime = startTimeMap.get(playerName);
+        return System.currentTimeMillis() - startTime; // Calculate elapsed time in milliseconds
+    }
 
     private Categorie getRandomCategorie() {
         Categorie[] categories = Categorie.values();
         Random random = new Random();
         return categories[random.nextInt(categories.length)];
     }
-
 }

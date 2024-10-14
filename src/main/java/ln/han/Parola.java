@@ -2,7 +2,6 @@ package ln.han;
 
 import java.util.Scanner;
 
-
 public class Parola {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -11,6 +10,19 @@ public class Parola {
         System.out.println("Enter your player name: ");
         String playerName = scanner.nextLine();
 
+        // Choose scoring system
+        System.out.println("Choose your scoring system:");
+        System.out.println("1. Normale Punten Telling");
+        System.out.println("2. Strenge Punten Telling");
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        PuntenTelling puntenTelling;
+        if (choice == 1) {
+            puntenTelling = new NormalePuntenTelling();
+        } else {
+            puntenTelling = new StrengePuntenTelling();
+        }
 
         System.out.println("The 8-question quiz starts. Good luck!");
         parola.startQuiz(playerName);
@@ -25,7 +37,7 @@ public class Parola {
         System.out.print("Make a word, as long as possible, that contains these letters: ");
         String word = scanner.nextLine();
 
-        int score = parola.calculateScore(playerName, word);
+        int score = puntenTelling.berekenScore(parola.getCorrectAnswersCount(playerName), word, parola.getElapsedTime(playerName));
         System.out.println("Score: " + score);
     }
 }
