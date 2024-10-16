@@ -1,7 +1,5 @@
 package ln.han;
 
-
-
 public record Speler(String naam) {
     public Speler {
         if (naam == null || naam.isBlank()) {
@@ -12,7 +10,7 @@ public record Speler(String naam) {
 
 //public class Speler {
 //
-//    String naam;
+//    public final String naam;
 //
 //    public Speler(String naam) {
 //        if (naam == null || naam.isBlank()) {
@@ -21,4 +19,3 @@ public record Speler(String naam) {
 //        this.naam = naam;
 //    }
 //}
-

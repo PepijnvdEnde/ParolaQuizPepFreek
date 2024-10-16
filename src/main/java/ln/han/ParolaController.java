@@ -8,7 +8,7 @@ public class ParolaController {
 
     private final QuizRepo quizRepo = new QuizRepo();
 
-    private PuntenTelling puntenTelling = new NormalePuntenTelling();
+    private final PuntenTelling puntenTelling = new NormalePuntenTelling();
 
     private final Map<String, SpelerStatus> spelerStatusMap = new HashMap<>();
     private final Map<String, Long> startTimeMap = new HashMap<>();
