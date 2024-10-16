@@ -14,7 +14,7 @@ public class Parola {
         System.out.println("1. Normale Punten Telling");
         System.out.println("2. Strenge Punten Telling");
         int choice = scanner.nextInt();
-        scanner.nextLine()
+        scanner.nextLine();
 
         PuntenTelling puntenTelling;
         if (choice == 1) {
