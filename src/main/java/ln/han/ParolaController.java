@@ -11,7 +11,7 @@ public class ParolaController {
     private PuntenTelling puntenTelling = new NormalePuntenTelling();
 
     private final Map<String, SpelerStatus> spelerStatusMap = new HashMap<>();
-    private final Map<String, Long> startTimeMap = new HashMap<>(); // To track the start time of each quiz
+    private final Map<String, Long> startTimeMap = new HashMap<>();
 
     public static ParolaController getInstance() {
         return new ParolaController();
@@ -24,7 +24,7 @@ public class ParolaController {
         System.out.println("Gekozen categorie: " + categorie.toString().toLowerCase());
         SpelerStatus spelerStatus = new SpelerStatus(speler, quiz);
         spelerStatusMap.put(playerName, spelerStatus);
-        startTimeMap.put(playerName, System.currentTimeMillis()); // Record the start time
+        startTimeMap.put(playerName, System.currentTimeMillis());
     }
 
     public String nextQuestion(String playerName) {
@@ -58,12 +58,12 @@ public class ParolaController {
 
     public int getCorrectAnswersCount(String playerName) {
         SpelerStatus spelerStatus = spelerStatusMap.get(playerName);
-        return spelerStatus.getScore(); // Assuming score represents the number of correct answers
+        return spelerStatus.getScore();
     }
 
     public long getElapsedTime(String playerName) {
         long startTime = startTimeMap.get(playerName);
-        return System.currentTimeMillis() - startTime; // Calculate elapsed time in milliseconds
+        return System.currentTimeMillis() - startTime;
     }
 
     private Categorie getRandomCategorie() {

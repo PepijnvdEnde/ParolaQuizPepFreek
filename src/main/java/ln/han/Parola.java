@@ -10,12 +10,11 @@ public class Parola {
         System.out.println("Enter your player name: ");
         String playerName = scanner.nextLine();
 
-        // Choose scoring system
         System.out.println("Choose your scoring system:");
         System.out.println("1. Normale Punten Telling");
         System.out.println("2. Strenge Punten Telling");
         int choice = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine()
 
         PuntenTelling puntenTelling;
         if (choice == 1) {
